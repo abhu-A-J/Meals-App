@@ -3,6 +3,7 @@ import { View, Text } from "react-native";
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
 
+
 /* Constants */
 import COLORS from "../constants/colors";
 
