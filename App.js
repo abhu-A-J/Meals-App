@@ -1,13 +1,25 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import {AppLoading} from "expo";
+import {useFonts} from "expo-font";
 
-export default function App() {
+/* Navigators*/
+import MealsNavigator from "./navigation/mealsNavigator";
+
+const App=()=> {
+
+  const [isFontsLoading]=useFonts({
+    'RalewayRegular':require("./assets/fonts/Raleway-Regular.ttf"),
+    'RalewayBold':require("./assets/fonts/Raleway-SemiBold.ttf")
+  });
+
+  if(!isFontsLoading){
+    return <AppLoading/>
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+   <MealsNavigator/>
   );
 }
 
@@ -19,3 +31,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+export default App;
