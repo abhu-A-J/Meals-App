@@ -3,9 +3,13 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import {AppLoading} from "expo";
 import {useFonts} from "expo-font";
+import { enableScreens } from 'react-native-screens';
 
 /* Navigators*/
 import MealsNavigator from "./navigation/mealsNavigator";
+
+
+enableScreens();
 
 const App=()=> {
 
