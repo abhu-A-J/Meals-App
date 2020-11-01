@@ -47,7 +47,7 @@ const MealDetailsScreen = (props) => {
         );
       })}
 
-      <Text style={styles.title}>Ingredients</Text>
+      <Text style={styles.title}>Steps to follow</Text>
       {selectedMeals.steps.map((step, index) => {
         return (
           <View key={step} style={styles.listItem}>
