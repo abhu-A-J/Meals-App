@@ -10,6 +10,11 @@ const FilterScreen=(props)=>{
 	)
 };
 
+/* Configs */
+FilterScreen.navigationOptions={
+	title:'Filter Meals'
+}
+
 
 const styles=StyleSheet.create({
 	screen:{

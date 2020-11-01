@@ -7,11 +7,16 @@ import {
   TouchableOpacity,
 } from "react-native";
 
+import { Ionicons } from "@expo/vector-icons";
+
+import { HeaderButtons, Item } from "react-navigation-header-buttons";
+
 /* Data */
 import { CATEGORIES } from "../../data/dummyData";
 
 /* Child Components */
 import CategoryMealTile from "../../components/CategoryGridTile";
+import CustomHeaderButton from "../../components/HeaderButton";
 
 const CategoriesScreen = (props) => {
   const { navigation } = props;
@@ -40,8 +45,19 @@ const CategoriesScreen = (props) => {
 };
 
 /* Configs */
-CategoriesScreen.navigationOptions = {
-  title: "Meal Categories",
+CategoriesScreen.navigationOptions = ({ navigation }) => {
+  return {
+    title: "Meal Categories",
+    headerLeft: () => (
+      <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
+        <Item
+          title="Favorites"
+          iconName="ios-menu"
+          onPress={() =>navigation.toggleDrawer()}
+        />
+      </HeaderButtons>
+    ),
+  };
 };
 
 const styles = StyleSheet.create({

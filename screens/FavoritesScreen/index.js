@@ -1,8 +1,12 @@
 import React from "react";
 import {View,Text,StyleSheet} from "react-native";
+import { HeaderButtons, Item } from "react-navigation-header-buttons";
+import { Ionicons } from "@expo/vector-icons";
+
 
 /* Child Components */
 import MealList from "../../components/MealList";
+import CustomHeaderButton from "../../components/HeaderButton";
 
 
 /* Constants */
@@ -19,7 +23,16 @@ const FavoritesScreen=(props)=>{
 /* Configs */
 FavoritesScreen.navigationOptions=({navigation})=>{
 	return {
-		title:'Your Favorites'
+		title:'Your Favorites',
+		headerLeft:()=>(
+			<HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
+        <Item
+          title="Favorites"
+          iconName="ios-menu"
+          onPress={() =>navigation.toggleDrawer()}
+        />
+      </HeaderButtons>
+		)
 	}
 }
 
