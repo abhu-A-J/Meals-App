@@ -32,6 +32,20 @@ const AppNavigator = createStackNavigator(
 );
 
 
+/* Stack Navigator for Favorites Screen */
+const FavoritesScreenStackNavigator=createStackNavigator(
+  {
+    Favorites:FavoritesScreen,
+    MealDetails:MealDetailsScreen
+  },
+  {
+    defaultNavigationOptions: {
+      headerTintColor: COLORS.primaryColor,
+    },
+  }
+)
+
+
 /* Tab Navigtor */
 const MealsTabNavigator = createBottomTabNavigator(
   {
@@ -44,7 +58,7 @@ const MealsTabNavigator = createBottomTabNavigator(
       }
     },
     Favorites: {
-      screen:FavoritesScreen,
+      screen:FavoritesScreenStackNavigator,
       navigationOptions:{
         tabBarIcon:(tabIconOptions)=>{
           return <Ionicons name="ios-star" size={25} color={tabIconOptions.tintColor}/>
