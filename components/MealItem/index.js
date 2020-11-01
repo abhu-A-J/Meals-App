@@ -6,7 +6,13 @@ import {
   TouchableOpacity,
   ImageBackground,
 } from "react-native";
+
+/* Constants */
 import FONTS from "../../constants/fonts";
+
+
+/* Child Components */
+import BodyText from "../../components/BodyText";
 
 const MealItem = (props) => {
   const {
@@ -36,9 +42,9 @@ const MealItem = (props) => {
             </ImageBackground>
           </View>
           <View style={{ ...styles.mealRow, ...styles.mealDescription }}>
-            <Text style={styles.text}>{duration} minutes</Text>
-            <Text style={styles.text}>{complexity} minutes</Text>
-            <Text style={styles.text}>{affordability} minutes</Text>
+            <BodyText style={styles.text}>{duration} minutes</BodyText>
+            <BodyText style={styles.text}>{complexity}</BodyText>
+            <BodyText style={styles.text}>{affordability}</BodyText>
           </View>
         </View>
       </TouchableOpacity>
@@ -81,7 +87,6 @@ const styles = StyleSheet.create({
     height: "20%",
   },
   text:{
-    fontFamily:FONTS.RalewayRegular,
   }
 });
 
