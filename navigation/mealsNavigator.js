@@ -29,6 +29,9 @@ const AppNavigator = createStackNavigator(
   {
     defaultNavigationOptions: {
       headerTintColor: COLORS.primaryColor,
+      headerTitleStyle:{
+        fontFamily:FONTS.RalewayBold,
+      }
     },
   }
 );
@@ -42,6 +45,9 @@ const FavoritesScreenStackNavigator = createStackNavigator(
   {
     defaultNavigationOptions: {
       headerTintColor: COLORS.primaryColor,
+      headerTitleStyle:{
+        fontFamily:FONTS.RalewayBold
+      }
     },
   }
 );
@@ -82,7 +88,15 @@ const MealsTabNavigator = createBottomTabNavigator(
     tabBarOptions: {
       activeTintColor: COLORS.accent,
       inactiveTintColor: "grey",
+      labelStyle: {
+        fontFamily:FONTS.RalewayBold,
+        fontSize:15
+      },
+      style:{
+        height:60
+      }
     },
+    
   }
 );
 
@@ -98,10 +112,6 @@ const MainNavigator = createDrawerNavigator(
       screen: MealsTabNavigator,
       navigationOptions: {
         title: "Favorite Meals",
-        headerTitleStyle: {
-          fontWeight: "bold",
-          fontFamily: FONTS.RalewayBold,
-        },
       },
     },
     Filters: FilterScreenStackNavigator,
@@ -110,7 +120,11 @@ const MainNavigator = createDrawerNavigator(
     contentOptions:{
       activeTintColor :COLORS.accent,
       labelStyle:{
-        fontFamily:FONTS.RalewayBold
+        fontFamily:FONTS.RalewayRegular,
+        fontSize:18
+      },
+      activeLabelStyle :{
+        fontFamily:FONTS.RalewayRegular,
       }
     }
   }

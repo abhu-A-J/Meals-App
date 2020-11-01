@@ -36,9 +36,9 @@ const MealItem = (props) => {
             </ImageBackground>
           </View>
           <View style={{ ...styles.mealRow, ...styles.mealDescription }}>
-            <Text>{duration} minutes</Text>
-            <Text>{complexity} minutes</Text>
-            <Text>{affordability} minutes</Text>
+            <Text style={styles.text}>{duration} minutes</Text>
+            <Text style={styles.text}>{complexity} minutes</Text>
+            <Text style={styles.text}>{affordability} minutes</Text>
           </View>
         </View>
       </TouchableOpacity>
@@ -80,6 +80,9 @@ const styles = StyleSheet.create({
     paddingVertical: 5,
     height: "20%",
   },
+  text:{
+    fontFamily:FONTS.RalewayRegular,
+  }
 });
 
 export default MealItem;
