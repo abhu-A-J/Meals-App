@@ -111,7 +111,7 @@ const MainNavigator = createDrawerNavigator(
     MealsFavorites: {
       screen: MealsTabNavigator,
       navigationOptions: {
-        title: "Favorite Meals",
+        title: "Meals Categories",
       },
     },
     Filters: FilterScreenStackNavigator,
