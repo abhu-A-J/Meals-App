@@ -58,7 +58,7 @@ const FilterScreen = (props) => {
       </View>
 
       <View style={styles.filterContainer}>
-        <BodyText style={styles.filterLabel}>Lactose</BodyText>
+        <BodyText style={styles.filterLabel}>Lactose-Free</BodyText>
         <Switch
           value={isLactoseFree}
           onValueChange={(newValue) => setIsLactoseFree(newValue)}
