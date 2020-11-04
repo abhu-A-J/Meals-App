@@ -6,6 +6,8 @@ import { CATEGORIES } from "../../data/dummyData";
 
 /* Child Components */
 import MealList from "../../components/MealList";
+import { View } from "react-native";
+import BodyText from "../../components/BodyText";
 
 /* Main Component */
 const CategoryMealsScreen = (props) => {
@@ -18,6 +20,12 @@ const CategoryMealsScreen = (props) => {
   const displayedMeals = availableMeals.filter(
     (meal) => meal.categoryIds.includes(categoryId) === true
   );
+
+  if(displayedMeals.length==0 || !displayedMeals){
+    return (<View style={{flex:1,justifyContent:"center",alignItems:"center"}}>
+      <BodyText>There are no meals available</BodyText>
+    </View>)
+  }
 
   return <MealList listData={displayedMeals} navigation={navigation} />;
 };

@@ -2,6 +2,10 @@ import React, { useState, useEffect, useCallback } from "react";
 import { View, Text, StyleSheet, Switch } from "react-native";
 import { HeaderButtons, Item } from "react-navigation-header-buttons";
 import { Ionicons } from "@expo/vector-icons";
+import {useDispatch} from "react-redux";
+
+/* Action Creators */
+import {setFilters} from "../../store/actions"
 
 /* Child Components */
 import BodyText from "../../components/BodyText";
@@ -14,6 +18,9 @@ import FONTS from "../../constants/fonts";
 /* Main Component */
 const FilterScreen = (props) => {
   const { navigation } = props;
+
+  const dispatch=useDispatch();
+
   const [isGlutenFree, setIsGlutenFree] = useState(false);
   const [isLactoseFree, setIsLactoseFree] = useState(false);
   const [isVegan, setIsVegan] = useState(false);
@@ -26,9 +33,8 @@ const FilterScreen = (props) => {
       isVegan,
       isVeg,
     };
-
-    console.log(appliedFilters);
-  }, [isGlutenFree, isLactoseFree, isVegan, isVeg]);
+    dispatch(setFilters(appliedFilters));
+  }, [isGlutenFree, isLactoseFree, isVegan, isVeg,dispatch]);
 
   useEffect(() => {
     navigation.setParams({
